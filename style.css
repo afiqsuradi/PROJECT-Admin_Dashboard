@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+
+:root {
+  --primary-cl: #1992d4;
+  --secondary-cl: #e2e8f0;
+  --card-tag-clr: #f0b429;
+  --font-primary: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+body {
+  background-color: var(--secondary-cl);
+}
+
+.flex-col-nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col-wrap {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-2-col {
+  grid-column: span 2;
+}
+
+.span-2-row {
+  grid-row: span 2;
+}
+
+.container {
+  display: grid;
+  grid-template: 1fr 5fr / 3fr 1fr;
+  gap: 1.5em;
+  margin-left: calc(max(195px, 15%) + 1.5em);
+}
+
+.navbar-container {
+  background-color: var(--primary-cl);
+}
+
+.header-container {
+  background-color: white;
+  border-radius: 1em;
+}
+
+#usr-pfp {
+  border-radius: 50%;
+  width: 3rem;
+}
+
+/* Top Container */
+
+.top-bar-container {
+  padding-top: 1em;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.search-container {
+  padding: 0.8em;
+}
+
+.search-container > form > * {
+  padding: 0 1em;
+}
+
+#search {
+  font-size: 1rem;
+  width: 90%;
+  height: 2em;
+  padding: 0.8em 1em;
+  border: none;
+  border-radius: 0.8em;
+  background-color: var(--secondary-cl);
+}
+
+.user-profile {
+  gap: 0.5em;
+}
+
+.profile-container {
+  gap: 1em;
+}
+
+.user-profile > #usr-name {
+  font-size: 1.4rem;
+  flex: flex-start;
+}
+
+.user-profiler > #usr-pfp {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.profile-container > .bell-ico {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+/* Bottom Top Container */
+.activities-container {
+  justify-content: space-between;
+  padding: 0.8em 1.5em;
+}
+
+.greet-user {
+  display: grid;
+  grid-template: repeat(2, 1fr) / 2fr 4fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.greet-user > #usr-pfp {
+  width: 5rem;
+  justify-self: center;
+}
+
+.greet-user > p {
+  font-size: 1rem;
+  align-self: end;
+}
+
+.greet-user > h1 {
+  font-size: 1.5rem;
+  align-self: start;
+  font-weight: bolder;
+}
+
+.activities {
+  gap: 1.5em;
+  padding: 1em 0;
+}
+
+.activities > a {
+  font-family: var(--font-primary);
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-cl);
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+}
+
+/* Projects Card */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5em;
+}
+
+.project {
+  position: relative;
+  background-color: white;
+  border-radius: 0.6em;
+  padding: 2em 2em;
+  overflow: hidden;
+}
+
+.project > a {
+  position: relative;
+  top: 10%;
+  left: 90%;
+}
+
+.project::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-color: var(--card-tag-clr);
+  width: 8px;
+  height: 100%;
+}
+
+.project-title {
+  font-size: 1.5rem;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #636363;
+}
+
+/* Sidebar */
+
+.announcements-container {
+  padding-right: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.announcements {
+  background-color: white;
+  border-radius: 0.8em;
+  padding: 1em 2em;
+}
+.announcement:not(:last-child) {
+  padding-bottom: 1em;
+  position: relative;
+}
+
+.announcement:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  height: 1px;
+  width: 100%;
+  background-color: #636363;
+}
+
+.announcement > h2 {
+  font-size: 1rem;
+}
+
+.announcement > p {
+  color: #636363;
+  font-size: 0.7rem;
+}
+
+.trending-container {
+  padding-top: 1.5em;
+  padding-right: 1.5em;
+}
+
+.trending {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5em;
+  background-color: white;
+  border-radius: 0.8em;
+  padding: 1em 2em;
+}
+
+.trending-item {
+  display: grid;
+  grid-template: repeat(2, 1fr) / 2fr 5fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.usr-name,
+.usr-project {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.usr-name {
+  align-self: end;
+}
+
+.usr-project {
+  align-self: start;
+  color: #636363;
+}
+
+@media (max-width: 765px) {
+  .container {
+    overflow: auto;
+    display: grid;
+    grid-template: 1fr 8fr / 4fr 1fr;
+    margin-left: calc(15% + 0.5em);
+  }
+
+  .search-container > form {
+    position: relative;
+  }
+
+  .search-ico {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  #search {
+    padding-left: 2.5em;
+  }
+
+  .user-profile > #usr-name {
+    display: none;
+  }
+
+  .profile-container {
+    padding: 1em 2em;
+  }
+}

@@ -1,0 +1,50 @@
+.navbar-container {
+  display: flex;
+  flex-flow: column nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 15%;
+  min-width: 195px;
+  overflow: auto;
+}
+
+.navbar-container > * {
+  padding: 2em;
+}
+
+.navbar-container > * > a {
+  display: flex;
+  gap: 0.6em;
+  /* grid-template-columns: 1fr 2fr; */
+  color: white;
+  text-decoration: none;
+  font-size: clamp(1rem, 50%, 1.4rem);
+  font-weight: bold;
+}
+
+.nav-title-label {
+  font-size: clamp(1.4rem, 50%, 2rem);
+}
+
+.general-links,
+.support-links {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+@media (max-width: 765px) {
+  .navbar-container > * {
+    padding: 1.4em;
+  }
+  .navbar-container {
+    min-width: unset;
+    width: 15%;
+    gap: 1.5em;
+  }
+  .navbar-container > * > a > p {
+    display: none;
+  }
+}
